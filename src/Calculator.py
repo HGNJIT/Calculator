@@ -1,10 +1,12 @@
 class Calculator:
+    result = 0
 
     def __init__(self):
         pass
 
     def add(self, a, b):
-        return a + b
+        self.result = int(a) + int(b)
+        return self.result
 
     def subtract(self, a, b):
         return a - b
