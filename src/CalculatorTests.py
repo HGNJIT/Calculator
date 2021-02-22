@@ -15,15 +15,20 @@ class MyTestCase(unittest.TestCase):
         reader = CSVReader('/src/Addition.csv').data
         for row in reader:
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
+        reader.clear()
 
     def test_subtract_method_calculator(self):
-        reader = CSVReader('/src/Subtraction.csv.csv').data
+        reader = CSVReader('/src/Subtraction.csv').data
         for row in reader:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
+            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), int(row['Result']))
+        reader.clear()
 
-
-#    def test_multiply_method_calculator(self):
-#        self.assertEqual(self.calculator.multiply(2, 2), 4)
+    def test_multiply_method_calculator(self):
+        reader = CSVReader('/src/Addition.csv').data
+        for row in reader:
+            print(row['Value 1'])
+            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
+        reader.clear()
 
 #   def test_divide_method_calculator(self):
 #       self.assertEqual(self.calculator.divide(8, 2), 4)

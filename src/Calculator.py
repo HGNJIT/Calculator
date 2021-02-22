@@ -9,7 +9,8 @@ class Calculator:
         return self.result
 
     def subtract(self, a, b):
-        return b - a
+        self.result = int(b) - int(a)
+        return self.result
 
     def multiply(self, a, b):
         return a * b
