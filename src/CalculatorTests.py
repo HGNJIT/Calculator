@@ -15,30 +15,29 @@ class MyTestCase(unittest.TestCase):
         reader = CSVReader('/src/Addition.csv').data
         for row in reader:
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
-        reader.clear()
 
     def test_subtract_method_calculator(self):
         reader = CSVReader('/src/Subtraction.csv').data
         for row in reader:
             self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), int(row['Result']))
-        reader.clear()
 
     def test_multiply_method_calculator(self):
-        reader = CSVReader('/src/Addition.csv').data
+        reader = CSVReader('/src/Multiplication.csv').data
         for row in reader:
-            print(row['Value 1'])
             self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
-        reader.clear()
 
-#   def test_divide_method_calculator(self):
-#       self.assertEqual(self.calculator.divide(8, 2), 4)
+    def test_divide_method_calculator(self):
+        reader = CSVReader('/src/Division.csv').data
+        for row in reader:
+            self.assertEqual(self.calculator.divide(row['Value 1'], row['Value 2']), round(float(row['Result']), 9))
 
-#    def test_square_method_calculator(self):
-#        self.assertEqual(self.calculator.square(3), 9)
+    def test_square_method_calculator(self):
+        reader = CSVReader('/src/Square.csv').data
+        for row in reader:
+            self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
 
-#    def test_sqrt_method_calculator(self):
-#        self.assertEqual(self.calculator.sqrt(25), 5)
+            #    def test_sqrt_method_calculator(self):
+            #        self.assertEqual(self.calculator.sqrt(25), 5)
 
-
-if __name__ == '__main__':
-    unittest.main()
+            if __name__ == '__main__':
+                unittest.main()

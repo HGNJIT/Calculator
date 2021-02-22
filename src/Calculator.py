@@ -13,13 +13,16 @@ class Calculator:
         return self.result
 
     def multiply(self, a, b):
-        return a * b
+        self.result = int(a) * int(b)
+        return self.result
 
     def divide(self, a, b):
-        return a / b
+        self.result = round(float(b) / float(a), 9)
+        return self.result
 
     def square(self, a):
-        return a ** 2
+        self.result = int(a) ** 2
+        return self.result
 
     def sqrt(self, a):
         return a ** .5

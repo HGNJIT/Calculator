@@ -9,4 +9,5 @@ class CSVReader:
             reader = csv.DictReader(text_data)
             for row in reader:
                 self.data.append(row)
+        self.data.clear()
         pass
