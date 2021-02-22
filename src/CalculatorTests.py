@@ -16,8 +16,11 @@ class MyTestCase(unittest.TestCase):
         for row in reader:
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
 
-#    def test_subtract_method_calculator(self):
-#        self.assertEqual(self.calculator.subtract(4, 2), 2)
+    def test_subtract_method_calculator(self):
+        reader = CSVReader('/src/Subtraction.csv.csv').data
+        for row in reader:
+            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
+
 
 #    def test_multiply_method_calculator(self):
 #        self.assertEqual(self.calculator.multiply(2, 2), 4)
