@@ -25,4 +25,5 @@ class Calculator:
         return self.result
 
     def sqrt(self, a):
-        return a ** .5
+        self.result = round(float(a) ** .5, 9)
+        return self.result
