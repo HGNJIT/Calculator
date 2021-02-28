@@ -1,5 +1,14 @@
 language: python
 python:
-  - "3.9-dev"
+  - "3.9"
+install:
+    - pip install -r requirements.txt
+    - pip install coveralls
 script:
-  - pytest
+  - coverage run --omit '/home/travis/virtualenv/python3.9.1/lib/python3.9/site-packages/_virtualenv.py' -m unittest discover tests && coverage report -m
+
+branches:
+  only:
+    - master
+after_success:
+  coveralls
