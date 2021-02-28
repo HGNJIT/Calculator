@@ -8,9 +8,11 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = Calculator()
 
+    # Checking that Calculator is an instance of self.calculator
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.calculator, Calculator)
 
+    # Call on the CSVReader to pull the data from Addition.csv
     def test_add_method_calculator(self):
         reader = CSVReader('/src/Data/Addition/Addition.csv').data
         print('********** Testing Addition **********')
@@ -18,6 +20,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
         print("Pass")
 
+    # Call on the CSVReader to pull the data from Division.csv
     def test_divide_method_calculator(self):
         reader = CSVReader('/src/Data/Division/Division.csv').data
         print('********** Testing Division **********')
@@ -25,6 +28,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.divide(row['Value 1'], row['Value 2']), round(float(row['Result'])))
         print("Pass")
 
+    # Call on the CSVReader to pull the data from Multiplication.csv
     def test_multiply_method_calculator(self):
         reader = CSVReader('/src/Data/Multiplication/Multiplication.csv').data
         print('********** Testing Multiplication **********')
@@ -32,6 +36,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
         print("Pass")
 
+    # Call on the CSVReader to pull the data from Square.csv
     def test_square_method_calculator(self):
         reader = CSVReader('/src/Data/Square/Square.csv').data
         print('********** Testing Squaring **********')
@@ -39,6 +44,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
         print("Pass")
 
+    # Call on the CSVReader to pull the data from SquareRoot.csv
     def test_sqrt_method_calculator(self):
         reader = CSVReader('/src/Data/SquareRoot/SquareRoot.csv').data
         print('********** Testing Square Root **********')
@@ -46,6 +52,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.sqrt(row['Value 1']), round(float(row['Result'])))
         print("Pass")
 
+    # Call on the CSVReader to pull the data from Subtraction.csv
     def test_subtract_method_calculator(self):
         reader = CSVReader('/src/Data/Subtraction/Subtraction.csv').data
         print('********** Testing Subtraction **********')
